@@ -1,10 +1,10 @@
 # PasswordStrengthChecker
-Python Tool for Password Strength Checking, Ready to setup and use
+**Python Tool for Password Strength Checking, Ready to setup and use
 Task 1
 Name : Shaik Abdul Ahad
 ID : CT08DS1276
 Domain: Cyber Security and Ethical Hacking
-Mentor: Sravani Gouni
+Mentor: Sravani Gouni**
 Description:
 ## Password Strength Checker
 
