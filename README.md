@@ -1,12 +1,11 @@
 # PasswordStrengthChecker
-Python Tool for Password Strength Checking, Ready to setup and use
-Task 1
-Name : Shaik Abdul Ahad
-ID : CT08DS1276
-Domain: Cyber Security and Ethical Hacking
-Mentor: Sravani Gouni
-Description:
-## Password Strength Checker
+1. Python Tool for Password Strength Checking, Ready to setup and use
+2. Task 1
+3. Name : Shaik Abdul Ahad
+4. ID : CT08DS1276
+5. Domain: Cyber Security and Ethical Hacking
+6. Mentor: Sravani Gouni
+7. ## Description: Password Strength Checker
 
 This repository contains a Python script designed to evaluate the strength of a given password based on various criteria. The script not only checks for the presence of digits, uppercase and lowercase letters, and special characters, but it also calculates the entropy of the password to provide a comprehensive assessment of its strength. 
 
