@@ -3,5 +3,5 @@
         chmod +x password_checker.py
    This command changes the mode of the file to be executable.
 3. Now, you can run your script directly from the terminal by typing:
-        ./password_checker.py
+        ./PasswordStrengthChecker.py
 If you’re in the same directory as the script.
