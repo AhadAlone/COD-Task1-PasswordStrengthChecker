@@ -48,8 +48,7 @@ def password_strength(password):
 def calculate_entropy(password):
     entropy = 0
     for char in password:
-        probability = 1 / len(password)
-        entropy += -probability * math.log(probability, 2)
+        entropy = len(password) * math.log(strength, 2)
     return entropy
 
 # Converting entropy into strength percentage
