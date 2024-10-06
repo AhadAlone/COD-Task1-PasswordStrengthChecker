@@ -35,26 +35,25 @@ def password_strength(password):
     else:
         errors.append("Password should contain at least one special character")
 
-    # Calculate password strength based on entropy
-    entropy = calculate_entropy(password)
+    # Calculate password entropy
+    entropy = calculate_entropy(password, strength)
     if entropy < 30:
-        errors.append("Password has entropy: {}".format(entropy))
-
+        errors.append(f"Password has low entropy: {entropy:.2f}")
 
     return strength, errors
 
-
 # Calculate Shannon entropy
-def calculate_entropy(password):
+def calculate_entropy(password, strength):
     entropy = 0
     for char in password:
-        entropy = len(password) * math.log(strength, 2)
+        prob = strength / len(password)
+        entropy -= prob * math.log(prob, 2)
     return entropy
 
-# Converting entropy into strength percentage
+# Convert entropy into strength percentage
 def entropy_to_strength_percentage(entropy):
     entropy_ranges = [
-        (0, 0.99), 
+        (0, 0.99),
         (1, 1.99),
         (2, 2.99),
         (3, 3.99),
@@ -91,14 +90,16 @@ def get_password_strength_message(strength):
         return "No Password"
 
 def main():
-    password = input("enter Password: ")
+    password = input("Enter Password: ")
     strength, errors = password_strength(password)
-    entropy = calculate_entropy(password)
-    print("\nPassword strength:", get_password_strength_message(strength),"\n")
-    
-    print( ",\n ".join(errors),"\n")
-    if strength > 4:
-        print("Strength : ",round(entropy_to_strength_percentage(entropy),2),"%")
+    entropy = calculate_entropy(password, strength)
+    print("\nPassword strength:", get_password_strength_message(strength), "\n")
 
-if __name__=="__main__":
+    if errors:
+        print(",\n ".join(errors), "\n")
+    
+    if strength > 4:
+        print("Strength: ", round(entropy_to_strength_percentage(entropy), 2), "%")
+
+if __name__ == "__main__":
     main()
